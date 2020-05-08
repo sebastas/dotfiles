@@ -12,14 +12,14 @@
   # available, otherwise `xterm-256color` is used.
   #TERM: alacritty
 
-#window:
+window:
   # Window dimensions (changes require restart)
   #
   # Specified in number of columns/lines, not pixels.
   # If both are `0`, this setting is ignored.
-  #dimensions:
-  #  columns: 0
-  #  lines: 0
+  dimensions:
+    columns: 200
+    lines: 50
 
   # Window position (changes require restart)
   #
@@ -34,8 +34,8 @@
   # Blank space added around the window in pixels. This padding is scaled
   # by DPI and the specified value is always added at both opposing sides.
   #padding:
-  #  x: 0
-  #  y: 0
+    #x: 0
+    #y: 0
 
   # Spread additional padding evenly around the terminal content.
   #dynamic_padding: false
@@ -49,7 +49,7 @@
   # Values for `decorations` (macOS only):
   #     - transparent: Title bar, transparent background and title bar buttons
   #     - buttonless: Title bar, transparent background, but no title bar buttons
-  #decorations: full
+  decorations: full
 
   # Startup Mode (changes require restart)
   #
@@ -60,7 +60,7 @@
   #
   # Values for `startup_mode` (macOS only):
   #   - SimpleFullscreen
-  #startup_mode: Windowed
+  startup_mode: Windowed
 
   # Window title
   #title: Alacritty
@@ -88,38 +88,38 @@
   #multiplier: 3
 
 # Font configuration
-#font:
+font:
   # Normal (roman) font face
-  #normal:
+  normal:
     # Font family
     #
     # Default:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    #family: monospace
+    family: monospace
 
     # The `style` can be specified to pick a specific face.
     #style: Regular
 
   # Bold font face
-  #bold:
+  bold:
     # Font family
     #
     # If the bold family is not specified, it will fall back to the
     # value specified for the normal font.
-    #family: monospace
+    family: monospace
 
     # The `style` can be specified to pick a specific face.
     #style: Bold
 
   # Italic font face
-  #italic:
+  italic:
     # Font family
     #
     # If the italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    #family: monospace
+    family: monospace
 
     # The `style` can be specified to pick a specific face.
     #style: Italic
@@ -136,7 +136,7 @@
     #style: Bold Italic
 
   # Point size
-  #size: 11.0
+  size: 11.0
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
@@ -171,11 +171,23 @@
 #draw_bold_text_with_bright_colors: false
 
 # Colors (Tomorrow Night Bright)
-#colors:
+colors:
   # Default colors
   #primary:
   #  background: '#000000'
   #  foreground: '#eaeaea'
+
+
+  # White
+  #primary:
+  #  background: '#ffffff'
+  #  foreground: '#2e2e2d'
+
+  # idk
+  primary:
+    background: '#3a3a3a'
+    foreground: '#eaeaea'
+
 
     # Bright and dim foreground colors
     #
@@ -201,6 +213,30 @@
   #selection:
   #  text: '#eaeaea'
   #  background: '#404040'
+
+  # idk
+  normal:
+    black: '#2C3E50'
+    red: '#E1402F'
+    green: '#33CD74'
+    yellow: '#F39C12'
+    blue: '#2980B9'
+    magenta: '#CA7CEB'
+    cyan: '#37DED4'
+    white: '#D8DEE2'
+
+
+  # idk bright
+  bright:
+    black: '#5F778F'
+    red: '#F1503F'
+    green: '#3DD67E'
+    yellow: '#F1C40F'
+    blue: '#3498DB'
+    magenta: '#D395ED'
+    cyan: '#6FECE5'
+    white: '#F8FBFC'
+
 
   # Normal colors
   #normal:
@@ -246,7 +282,7 @@
   # Example:
   #   `- { index: 16, color: '#ff00ff' }`
   #
-  #indexed_colors: []
+  indexed_colors: []
 
 # Visual Bell
 #
@@ -278,32 +314,32 @@
 #
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
-#background_opacity: 1.0
+background_opacity: 0.95
 
-#selection:
-  #semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
+selection:
+  semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
 
   # When set to `true`, selected text will be copied to the primary clipboard.
-  #save_to_clipboard: false
+  save_to_clipboard: true
 
 # Allow terminal applications to change Alacritty's window title.
-#dynamic_title: true
+dynamic_title: true
 
-#cursor:
+cursor:
   # Cursor style
   #
   # Values for `style`:
   #   - ▇ Block
   #   - _ Underline
   #   - | Beam
-  #style: Block
+  style: Block
 
   # If this is `true`, the cursor will be rendered as a hollow box when the
   # window is not focused.
-  #unfocused_hollow: true
+  unfocused_hollow: true
 
 # Live config reload (changes require restart)
-#live_config_reload: true
+live_config_reload: true
 
 # Shell
 #
@@ -338,17 +374,17 @@
 # Send ESC (\x1b) before characters when alt is pressed.
 #alt_send_esc: true
 
-#mouse:
+mouse:
   # Click settings
   #
   # The `double_click` and `triple_click` settings control the time
   # alacritty should wait for accepting multiple clicks as one double
   # or triple click.
-  #double_click: { threshold: 300 }
-  #triple_click: { threshold: 300 }
+  double_click: { threshold: 300 }
+  triple_click: { threshold: 300 }
 
   # If this is `true`, the cursor is temporarily hidden when typing.
-  #hide_when_typing: false
+  hide_when_typing: true
 
   #url:
     # URL launcher
@@ -394,8 +430,8 @@
 # And optionally:
 #
 # - `mods` (see key bindings)
-#mouse_bindings:
-#  - { mouse: Middle, action: PasteSelection }
+mouse_bindings:
+  - { mouse: Middle, action: PasteSelection }
 
 # Key bindings
 #
