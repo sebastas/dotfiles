@@ -8,8 +8,8 @@ rm -rf ~/.config/alacritty > /dev/null 2>&1
 rm -rf ~/.config/fish > /dev/null 2>&1
 
 # Create directory for alacritty config
-mkdir .config/alacritty
-chown $(whoami):$(whoami) .config/alacritty
+mkdir ~/.config/alacritty
+chown $(whoami):$(whoami) ~/.config/alacritty
 
 # Create symlinks
 ln -svf $dotfiles/alacritty.yml ~/.config/alacritty/
