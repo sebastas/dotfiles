@@ -2,29 +2,18 @@
 
 DISTRO=""
 
-function ask {
-	while true; do
-	    read -p "$1" yn
-	    case $yn in
-	        [Yy]* ) return 1;;
-	        [Nn]* ) exit;;
-	        * ) echo "Please answer yes or no.";;
-	    esac
-	done
-}
-
 function askDistro {
 	while true; do
-	    read -p "$1" au
-	    case $au in
-	        [Aa]* ) DISTRO="arch";break;;
+	    read -p "$1" mu
+	    case $mu in
+	        [Mm]* ) DISTRO="manjaro";break;;
 	        [Uu]* ) DISTRO="ubuntu";break;;
-	        * ) echo "Please answer arch or ubuntu.";;
+	        * ) echo "Please answer manjaro or ubuntu.";;
 	    esac
 	done
 }
 
-function installArch {
+function installManjaro {
 	printf "\nNeed packages alacritty, fish, tmux, git and curl\n\n"
 	sleep 1
 	pacman -Sy alacritty fish tmux git curl
@@ -43,10 +32,10 @@ function installUbuntu {
 	snap install micro --classic
 }
 
-askDistro "[A]rch or [U]buntu? [a/u] "
+askDistro "[M]anjaro or [U]buntu? [a/u] "
 
-if [ $DISTRO == "arch" ]; then
-	installArch;
+if [ $DISTRO == "manjaro" ]; then
+	installManjaro;
 else
 	installUbuntu
 fi
