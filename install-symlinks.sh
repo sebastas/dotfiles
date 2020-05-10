@@ -19,3 +19,8 @@ ln -svf $dotfiles/.tmux.conf ~/
 # Change default shell to fish
 printf "\nChanging default shell to fish:\n"
 chsh -s /usr/bin/fish
+
+
+# Install omf
+printf "Installing Oh My Fish! \n"
+curl -L https://get.oh-my.fish | fish

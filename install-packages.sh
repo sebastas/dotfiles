@@ -49,6 +49,4 @@ else
 	installUbuntu
 fi
 
-printf "Installing Oh My Fish! \n"
-curl -L https://get.oh-my.fish | fish
 
