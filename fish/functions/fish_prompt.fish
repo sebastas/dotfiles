@@ -1,3 +1,5 @@
+# OMF Default theme customized by: Sebastian Slettebakken
+#
 # You can override some default options with config.fish:
 #
 #  set -g theme_short_path yes
