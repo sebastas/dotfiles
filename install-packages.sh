@@ -27,7 +27,7 @@ function askDistro {
 function installArch {
 	printf "\nNeed packages alacritty, fish, tmux, git and curl\n\n"
 	sleep 1
-	pacman -S alacritty fish tmux git curl
+	pacman -Sy alacritty fish tmux git curl
 	
 	snap install micro --classic
 }
@@ -37,7 +37,8 @@ function installUbuntu {
 	add-apt-repository ppa:mmstick76/alacritty
 
 	printf "\nNeed packages alacritty, fish, tmux, git and curl\n\n"
-	apt-get install allacrity fish tmux git curl
+	apt-get update
+	apt-get install alacritty fish tmux git curl
 }
 
 askDistro "[A]rch or [U]buntu? [a/u] "
