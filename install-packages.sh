@@ -39,6 +39,8 @@ function installUbuntu {
 	printf "\nNeed packages alacritty, fish, tmux, git and curl\n\n"
 	apt-get update
 	apt-get install alacritty fish tmux git curl
+
+	snap install micro --classic
 }
 
 askDistro "[A]rch or [U]buntu? [a/u] "
