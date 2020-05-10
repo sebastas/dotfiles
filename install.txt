@@ -25,3 +25,5 @@ ln -sv ~/dotfiles/fish ~/.config/
 # micro #
 
 # for micro to work as $EDITOR, change value in ~/.profile and re-login
+# for key bindings to work while using tmux, use command:
+export TERM=xterm-256color
