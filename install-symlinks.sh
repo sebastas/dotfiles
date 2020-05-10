@@ -9,7 +9,6 @@ rm -rf ~/.config/fish > /dev/null 2>&1
 
 # Create directory for alacritty config
 mkdir ~/.config/alacritty
-chown $(whoami):$(whoami) ~/.config/alacritty
 
 # Create symlinks
 ln -svf $dotfiles/alacritty.yml ~/.config/alacritty/
@@ -18,4 +17,5 @@ ln -svf $dotfiles/.tmux.conf ~/
 
 
 # Change default shell to fish
-chsh -s /bin/fish
+printf "\nChanging default shell to fish:\n"
+chsh -s /usr/bin/fish
