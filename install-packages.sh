@@ -32,7 +32,7 @@ function installUbuntu {
 	snap install micro --classic
 }
 
-askDistro "[M]anjaro or [U]buntu? [a/u] "
+askDistro "[M]anjaro or [U]buntu? [m/u] "
 
 if [ $DISTRO == "manjaro" ]; then
 	installManjaro;
