@@ -38,18 +38,18 @@ to specify custom escape sequences and various other settings.
 
 ## tmux shortcuts
 * Prefix key: `Ctrl-b`
-* Reload tmux config: <prefix> `Ctrl-r`
-* Split window horizontally - new vertical pane: <prefix> `Alt-|`
-* Split window vertically - new horizontal pane: <prefix> `Alt--`
-* Create new window [defualt]: <prefix> `c`
-* Switch to most recent used window: <prefix> `Tab`
+* Reload tmux config: prefix + `Ctrl-r`
+* Split window horizontally - new vertical pane: `Alt-|`
+* Split window vertically - new horizontal pane: `Alt--`
+* Create new window [defualt]: prefix + `c`
+* Switch to most recent used window: prefix + `Tab`
 * Switch pane: `Shift-Alt-{ArrowKey}`
-* Resize pane [default]: <prefix> `Ctrl-{ArrowKey}`
-* Swap/rotate panes [default]: <prefix> `Ctrl-o`
-* Session, window and pane overview/selector [default]: <prefix> `w`
-* Deattach from session [default]: <prefix> `d` (Alacritty will automatically attach to 
+* Resize pane [default]: prefix + `Ctrl-{ArrowKey}`
+* Swap/rotate panes [default]: prefix + `Ctrl-o`
+* Session, window and pane overview/selector [default]: prefix + `w`
+* Deattach from session [default]: prefix + `d` (Alacritty will automatically attach to 
 session when started)
-* Switch to most recent pane [default]: <prefix> `o`
+* Switch to most recent pane [default]: prefix + `o`
 * Mouse mode is enabled with easier copy-pasting
 * Showing ip address in status bar, might have som issues if device has multiple interfaces 
 and addresses
