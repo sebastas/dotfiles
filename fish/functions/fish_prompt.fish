@@ -32,7 +32,7 @@ function fish_prompt
   if test $last_command_status -eq 0
     echo -n -s $green $fish $normal_color " on " $cyan $host
   else
-    echo -n -s $red $fish $normal_color
+    echo -n -s $red $fish $normal_color " on " $cyan $host
   end
 
   if git_is_repo
