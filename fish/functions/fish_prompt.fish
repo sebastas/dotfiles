@@ -15,6 +15,7 @@ function fish_prompt
   end
 
   set -l fish     "$USER"
+  set -l host     "$hostname"
   set -l ahead    "↑"
   set -l behind   "↓"
   set -l diverged "⥄ "
@@ -29,7 +30,7 @@ function fish_prompt
   set -l yellow (set_color yellow)
 
   if test $last_command_status -eq 0
-    echo -n -s $green $fish $normal_color
+    echo -n -s $green $fish $normal_color " on " $cyan $host
   else
     echo -n -s $red $fish $normal_color
   end
