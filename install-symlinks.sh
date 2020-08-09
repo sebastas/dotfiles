@@ -8,7 +8,7 @@ rm -rf ~/.config/fish > /dev/null 2>&1
 # Create symlinks
 ln -svf ~/dotfiles/alacritty ~/.config/
 ln -svf ~/dotfiles/fish ~/.config/
-ln -svf ~/dotfiles/.tmux.conf ~/
+ln -svf ~/dotfiles/tmux/.tmux.conf ~/
 
 
 # Change default shell to fish
