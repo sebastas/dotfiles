@@ -12,7 +12,7 @@ ln -svf ~/dotfiles/alacritty ~/.config/
 ln -svf ~/dotfiles/fish ~/.config/
 ln -svf ~/dotfiles/tmux/.tmux.conf ~/
 ln -svf ~/dotfiles/.gitconfig ~/
-ln -svg ~/dotfiles/.toggle-terminal ~/
+ln -svg ~/dotfiles/.toggle-terminal.sh ~/
 
 
 # Change default shell to fish
