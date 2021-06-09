@@ -5,12 +5,14 @@ rm -rf ~/.tmux.conf > /dev/null 2>&1
 rm -rf ~/.config/alacritty > /dev/null 2>&1
 rm -rf ~/.config/fish > /dev/null 2>&1
 rm -rf ~/.gitconfig > /dev/null 2>&1
+rm -rf ~/.toggle-terminal.sh > dev/null 2>&1
 
 # Create symlinks
 ln -svf ~/dotfiles/alacritty ~/.config/
 ln -svf ~/dotfiles/fish ~/.config/
 ln -svf ~/dotfiles/tmux/.tmux.conf ~/
 ln -svf ~/dotfiles/.gitconfig ~/
+ln -svg ~/dotfiles/.toggle-terminal ~/
 
 
 # Change default shell to fish
