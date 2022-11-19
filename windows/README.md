@@ -51,10 +51,31 @@ Credit for the color codes for Windows Terminal to this [issue](https://github.c
     "brightWhite": "#E5E9F0"
 }
 ```
+
 #### Font
 
-...
+I use FiraCode NF in Windows Terminal. Can be downloaded from [here](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/FiraCode).
 
 #### Profiles
 
-...
+As profiles in Windows Terminal use a unique UUID, I do not include the whole `settings.json` as it has to be customized easily. Changes I make are usually in the settings GUI (`Ctrl+,`). Changes include:
+
+- Setting the default profile to new WSL - Ubuntu profile
+- Updating color scheme to Nord and font under the Appearance section of profiles (either per profile or default)
+
+
+## WSL
+
+The Windows Subsystem for Linux lets developers run a GNU/Linux environment -- including most command-line tools, utilities, and applications -- directly on Windows, unmodified, without the overhead of a traditional virtual machine or dualboot setup.
+
+Docs can be found here: [Best practices for setting up a WSL development environment](https://learn.microsoft.com/en-us/windows/wsl/setup/environment)
+
+### Install
+
+Open Windows Terminal as Administrator and and run the following command in PowerShell:
+
+```powershell
+wsl --install
+```
+
+This will install the default Ubuntu distro. Reboot the machine and start up `wsl.exe` or search for *Ubuntu* in the start menu. Then proceed to set up username and password.
