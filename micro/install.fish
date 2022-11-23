@@ -16,7 +16,7 @@ function install_prereq
         # info 'prereq is installed'
     else
         info 'make sure jq is installed to get latest version of micro. installing now...'
-        sudo apt install -qq jq &>/dev/null
+        sudo apt install -qq jq &>/dev/null -y
         and success "jq installed"
     end
 end
