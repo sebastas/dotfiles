@@ -76,6 +76,5 @@ function install_micro
 end
 
 # Main function calls
-subtitle 'installing micro'
 install_prereq
 install_micro
