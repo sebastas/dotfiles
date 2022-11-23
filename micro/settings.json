@@ -1,3 +1,7 @@
 {
-    "colorscheme": "solarized"
+    "colorscheme": "solarized",
+    "diffgutter": true,
+    "mkparents": true,
+    "softwrap": true,
+    "status": true
 }
