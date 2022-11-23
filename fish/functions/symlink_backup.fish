@@ -1,14 +1,14 @@
 function symlink -d "links a file or directory keeping a backup"
-    echo $argv | read -l old new backup
+    echo $argv | read -l old new
     if test -e $new
         set newf (readlink $new)
         if test "$newf" = "$old"
             success "skipped $old"
             return
         else
-            mv $new $new.$backup
-            and success "backed up $new to $new.$backup"
-            or fail "failed to backup $new to $new.$backup"
+            mv $new $new.backup
+            and success "backed up $new to $new.backup"
+            or fail "failed to backup $new to $new.backup"
         end
     end
     mkdir -p (dirname $new)

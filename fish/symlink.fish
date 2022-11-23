@@ -7,9 +7,9 @@ source $DOTFILES_ROOT/fish/functions/outputs.fish
 source $DOTFILES_ROOT/fish/functions/symlink_backup.fish
 
 subtitle 'symlink fish'
-symlink $CURRENT_DIR/functions $__fish_config_dir/functions backup
+symlink $CURRENT_DIR/functions $__fish_config_dir/functions
 or fail 'functions directory'
-symlink $CURRENT_DIR/config.fish $__fish_config_dir/config.fish backup
+symlink $CURRENT_DIR/config.fish $__fish_config_dir/config.fish
 or fail 'config.fish'
 
 # fisher-plugins
