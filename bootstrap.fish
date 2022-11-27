@@ -75,6 +75,9 @@ function manage_gitconfig
     or fail 'failed to manage gitconfig with dotfiles'
 
     git config --global dotfiles.uname (uname)
+    if test (git config --get dotfiles.uname) = 'Linux'
+        git config --global dotfiles.distro (grep "^ID=" /etc/os-release | sed -E 's/ID=(.*)/\1/')
+    end
     prompt_alacritty # prompt for alacritty install
 end
 
