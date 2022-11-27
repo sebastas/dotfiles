@@ -47,7 +47,7 @@ end
 # end
 
 switch $distro
-    case ubuntu debian
+    case ubuntu debian pop
         install_apt
     case '*'
         info "unable to install azure-cli for [$distro]"

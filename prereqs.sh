@@ -60,7 +60,7 @@ else
 fi
 # Install fish for distro
 case $distro in
-    ubuntu ) install_ubuntu ;;
+    ubuntu | pop) install_ubuntu ;;
     debian ) install_debian ;;
     fedora ) dnf install -y fish jq ;;
     manjaro | arch ) pacman -S --noconfirm fish jq ;;
