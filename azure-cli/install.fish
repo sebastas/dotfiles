@@ -46,9 +46,13 @@ end
 #     sudo dnf install azure-cli -y
 # end
 
-switch $distro
-    case ubuntu debian pop
-        install_apt
-    case '*'
-        info "unable to install azure-cli for [$distro]"
+if test (uname) = 'Linux'
+    switch $distro
+        case ubuntu debian pop
+            install_apt
+        case '*'
+            info "unable to install azure-cli for [$distro]"
+    end
+else
+    info "use brew to install azure-cli for mac [$(uname)]"
 end

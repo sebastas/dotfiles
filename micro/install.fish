@@ -76,5 +76,9 @@ function install_micro
 end
 
 # Main function calls
-install_prereq
-install_micro
+if test (uname) = 'Linux'
+    install_prereq
+    install_micro
+else
+    info "use brew to install micro for mac [$(uname)]"
+end
