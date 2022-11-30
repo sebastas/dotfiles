@@ -1,5 +1,7 @@
 #!/usr/bin/env fish
 
+cd (dirname (status --current-file)) # sets CURRENT_DIR to be able to retrieve DOTFILES_ROOT
+
 set DOTFILES_ROOT (git rev-parse --show-toplevel)
 set CURRENT_DIR (dirname (status --current-file))
 
@@ -21,7 +23,7 @@ end
 
 # Initializes the .gitconfig file
 function init_gitconfig
-    title 'GITCONFIG'
+    title GITCONFIG
     set managed (git config --global --get dotfiles.managed) # check if config is managed by dotfiles
     # if there is no user.email, prompt user for name and email
     if test -z (git config --global --get user.email)
@@ -58,7 +60,7 @@ function init_gitconfig
         manage_gitconfig
     else
         # otherwise the gitconfig is already managed by dotfiles
-        info 'gitconfig already managed by dotfiles'
+        success 'gitconfig is already managed by dotfiles'
     end
 end
 
@@ -75,7 +77,7 @@ function manage_gitconfig
     or fail 'failed to manage gitconfig with dotfiles'
 
     git config --global dotfiles.uname (uname)
-    if test (git config --get dotfiles.uname) = 'Linux'
+    if test (git config --get dotfiles.uname) = Linux
         git config --global dotfiles.distro (grep "^ID=" /etc/os-release | sed -E 's/ID=(.*)/\1/')
     end
     prompt_alacritty # prompt for alacritty install
@@ -117,6 +119,16 @@ end
 
 # Main function calls
 greeting
+
+# Check if --reset-git was passed when running the script, and 
+# set the gitconfig managed state to false to re-init gitconfig
+set -l options (fish_opt -s r -l reset-git --long-only)
+argparse --ignore-unknown $options -- $argv
+if set -q _flag_reset_git
+    git config --global dotfiles.managed false
+    and info "reset gitconfig..."
+end
+
 init_gitconfig
 install_dotfiles
 symlink_dotfiles
