@@ -30,7 +30,8 @@ if test (uname) = Linux
     if command -qa bat
         set -Ux MANPAGER "sh -c 'col -bx | bat -l man -p'" # set `man` to use bat
         and success "set `man` to use bat"
-        # alias --save cat=bat
+        alias --save cat=bat
+        and success "set alias cat=bat"
     end
 else
     info "use brew to install packages for mac [$(uname)]"

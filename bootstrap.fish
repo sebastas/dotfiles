@@ -117,6 +117,25 @@ function symlink_dotfiles
     end
 end
 
+function install_fisher
+    title INSTALL FISHER
+    if test ! -e $__fish_config_dir/functions/fisher.fish
+        info "fisher not found on this system. installing..."
+        curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
+        and success "fisher installed"
+        or fail fisher
+    else
+        success "fisher is already installed"
+    end
+end
+
+function update_fisher
+    title UPDATE FISHER
+    fisher update
+    and success "updated and installed plugins"
+    or fail "failed to update and install plugins"
+end
+
 # Main function calls
 greeting
 
@@ -130,5 +149,7 @@ if set -q _flag_reset_git
 end
 
 init_gitconfig
+install_fisher
 install_dotfiles
 symlink_dotfiles
+update_fisher
