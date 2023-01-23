@@ -25,6 +25,7 @@ function fish_prompt
     set -l cyan (set_color cyan)
     set -l blue (set_color blue)
     set -l yellow (set_color yellow)
+    set -l magenta (set_color magenta)
 
     if test $last_command_status -eq 0
         echo -n -s $green $user $normal_color " on " $cyan $host
@@ -39,7 +40,7 @@ function fish_prompt
             set cwd (echo $PWD | sed -e "s|$parent_root_folder/||")
         end
 
-        echo -n -s " " $yellow $cwd $normal_color
+        echo -n -s " " $magenta $cwd $yellow (__kube_prompt) $normal_color
         echo -n -s " on " $green (git_branch_name) $normal_color " "
 
         if git_is_touched
@@ -48,7 +49,7 @@ function fish_prompt
             echo -n -s (git_ahead $ahead $behind $diverged $none)
         end
     else
-        echo -n -s " " $yellow $cwd $normal_color
+        echo -n -s " " $magenta $cwd $yellow (__kube_prompt) $normal_color
     end
 
     echo -n -s " "

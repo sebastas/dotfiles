@@ -17,4 +17,6 @@ or fail 'outputs.fish'
 symlink $CURRENT_DIR/functions/symlink_backup.fish $__fish_config_dir/functions/symlink_backup.fish
 or fail 'symlink_backup.fish'
 symlink $CURRENT_DIR/fish_plugins $__fish_config_dir/fish_plugins
-or fail 'fish_plugins'
+or fail 'fish_plugins file'
+symlink $CURRENT_DIR/functions/__kube_prompt.fish $__fish_config_dir/functions/__kube_prompt.fish
+or fail 'kube_prompt.fish'
