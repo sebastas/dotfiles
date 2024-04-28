@@ -8,8 +8,9 @@ source $DOTFILES_ROOT/fish/functions/symlink_backup.fish
 
 set distro (git config --get dotfiles.distro)
 
-symlink $CURRENT_DIR/bat.config $HOME/.config/bat/config
+symlink $CURRENT_DIR/bat $HOME/.config/bat
 or fail 'bat config'
+info "rebuild bat cache with 'bat cache --build'"
 
 function symlink_apt
     mkdir -p $HOME/.local/bin

@@ -9,7 +9,10 @@ if status is-interactive
     set fzf_directory_opts --bind "ctrl-o:execute($EDITOR {} &> /dev/tty)"
 
     # LS_COLORS (using vivid - https://github.com/sharkdp/vivid)
-    set -gx LS_COLORS (vivid generate nord)
+    set -gx LS_COLORS (vivid generate catppuccin-mocha)
+
+    # Set micro truecolor
+    set -gx MICRO_TRUECOLOR 1
 
     # kube toggle (Ctrl+Alt+K)
     bind \e\ck 'test "$__kube_ps_enabled" = 1; set -U __kube_ps_enabled $status; commandline -f repaint'
