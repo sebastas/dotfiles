@@ -25,5 +25,8 @@ if status is-interactive
     function lt
         command eza --long --all --git --icons --group-directories-first --group --header --tree --git-ignore $argv
     end
-    funcsave --quiet la lt
+    function ll
+        command eza --long --git --icons --group-directories-first --group --header $argv
+    end
+    funcsave --quiet la lt ll
 end
