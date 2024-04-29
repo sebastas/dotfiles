@@ -59,8 +59,8 @@ function install_eza
         echo "deb [signed-by=/etc/apt/keyrings/gierens.gpg] http://deb.gierens.de stable main" | sudo tee /etc/apt/sources.list.d/gierens.list
         sudo chmod 644 /etc/apt/keyrings/gierens.gpg /etc/apt/sources.list.d/gierens.list
         info "ppa repository for eza was added... running update and install"
-        sudo apt update
-        sudo apt install -y eza
+        sudo apt update -qq
+        sudo apt install -qq eza &>/dev/null -y
         and success "installed eza"
     end
 end
