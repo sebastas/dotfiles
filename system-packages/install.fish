@@ -9,7 +9,7 @@ source $DOTFILES_ROOT/fish/functions/symlink_backup.fish
 set distro (git config --get dotfiles.distro)
 
 # Packages to be downloaded with apt (ubuntu, debian, pop)
-set apt_packages fd-find bat fzf
+set apt_packages fd-find bat fzf nala
 
 function install_apt
     for package in $apt_packages
@@ -32,7 +32,7 @@ function install_vivid
         set -l current_vivid v(vivid --version | awk '{print $2}')
         if test $current_vivid = $latest_vivid
             success "vivid is already installed and up-to-date [$current_vivid]"
-            exit 0
+            return
         end
     end
     info "installing vivid..."
@@ -48,11 +48,29 @@ function install_vivid
     end
 end
 
+# add ppa and install eza
+function install_eza
+    if test -e /usr/bin/eza
+        success "eza already installed"
+    else
+        info "installing eza..."
+        sudo mkdir -p /etc/apt/keyrings
+        wget -qO- https://raw.githubusercontent.com/eza-community/eza/main/deb.asc | sudo gpg --dearmor -o /etc/apt/keyrings/gierens.gpg
+        echo "deb [signed-by=/etc/apt/keyrings/gierens.gpg] http://deb.gierens.de stable main" | sudo tee /etc/apt/sources.list.d/gierens.list
+        sudo chmod 644 /etc/apt/keyrings/gierens.gpg /etc/apt/sources.list.d/gierens.list
+        info "ppa repository for eza was added... running update and install"
+        sudo apt update
+        sudo apt install -y eza
+        and success "installed eza"
+    end
+end
+
 if test (uname) = Linux
     switch $distro
         case ubuntu debian pop
             install_apt
             install_vivid
+            install_eza
         case '*'
             info "unable to install packages for [$distro]"
     end
