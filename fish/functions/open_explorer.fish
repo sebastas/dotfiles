@@ -9,7 +9,7 @@ function open_explorer
             # Running Linux - File explorer might vary
             xdg-open .
         end
-    else if $uname = Darwin
+    else if test $uname = Darwin
         # Running Mac - opening Finder
         open .
     else
