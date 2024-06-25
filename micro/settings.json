@@ -1,7 +1,7 @@
 {
+    "clipboard": "terminal",
     "colorscheme": "catppuccin-mocha",
     "diffgutter": true,
     "mkparents": true,
-    "softwrap": true,
-    "status": true
+    "softwrap": true
 }

@@ -18,6 +18,9 @@ if status is-interactive
     # kube toggle (Ctrl+Alt+K)
     bind \e\ck 'test "$__kube_ps_enabled" = 1; set -U __kube_ps_enabled $status; commandline -f repaint'
 
+    # open explorer (Ctrl+Alt+O)
+    bind \e\co open_explorer
+
     # eza config
     function la
         command eza --long --all --git --icons --group-directories-first --group --header --color=always $argv
